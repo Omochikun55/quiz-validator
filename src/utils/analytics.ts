@@ -223,7 +223,7 @@ export function analyzeDifficultyDistribution(
 /**
  * Analyze category coverage
  */
-export function analyzeCategoryC overage(
+export function analyzeCategoryCoverage(
   questions: QuizQuestion[]
 ): {
   coverage: Record<string, number>;
