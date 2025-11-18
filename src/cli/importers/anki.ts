@@ -1,9 +1,3 @@
-interface AnkiCard {
-  front: string;
-  back: string;
-  tags?: string[];
-}
-
 export function convertFromAnki(content: string): any[] {
   const lines = content.split('\n').filter(line => line.trim());
   const questions: any[] = [];

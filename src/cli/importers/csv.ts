@@ -3,7 +3,6 @@ export function convertFromCsv(content: string): any[] {
   const questions: any[] = [];
 
   // ヘッダー行をスキップ
-  const headers = lines[0].split(',').map(h => h.trim());
 
   for (let i = 1; i < lines.length; i++) {
     const values = parseCSVLine(lines[i]);
