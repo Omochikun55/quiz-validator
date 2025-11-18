@@ -447,6 +447,107 @@ The scoring system calculates a 0-100 score based on:
 
 ---
 
+## 🖥️ CLI Usage
+
+### Installation
+
+```bash
+npm install -g @omochikun/quiz-validator
+```
+
+### Commands
+
+#### Validate a single file
+
+```bash
+quiz-validator validate quiz.json
+quiz-validator validate quiz.json --format html --output report.html
+quiz-validator validate quiz.json --strict
+```
+
+**Options:**
+- `-f, --format <type>`: Output format (json|html|markdown), default: markdown
+- `-o, --output <file>`: Output file path (optional, prints to stdout if not specified)
+- `--strict`: Enable strict validation mode (requires explanation, category, difficulty)
+
+#### Batch validation
+
+```bash
+quiz-validator batch ./quizzes
+quiz-validator batch ./quizzes --recursive --output summary.md
+```
+
+**Options:**
+- `-r, --recursive`: Scan subdirectories
+- `-o, --output <file>`: Summary report output file
+
+#### Convert formats
+
+```bash
+quiz-validator convert anki-export.txt --type anki --output quiz.json
+quiz-validator convert questions.csv --type csv --output quiz.json
+quiz-validator convert quizlet-export.txt --type quizlet --output quiz.json
+```
+
+**Options:**
+- `-t, --type <format>`: Source format (anki|csv|quizlet), default: anki
+- `-o, --output <file>`: Output JSON file (optional, prints to stdout if not specified)
+
+### Supported Import Formats
+
+#### Anki TSV Format
+
+```
+Front\tBack\tTag1\tTag2
+What is 2+2?\t4\tMath\tBasic
+What is 3+3?\t6\tMath\tBasic
+```
+
+#### CSV Format
+
+```
+question,answer,option1,option2,option3,option4
+"What is the capital of France?","Paris","London","Berlin","Madrid"
+"What is 2+2?","4","3","5","6"
+```
+
+#### Quizlet Format
+
+```
+Term 1
+Definition 1
+Term 2
+Definition 2
+```
+
+### Output Formats
+
+#### JSON Output
+
+```bash
+quiz-validator validate quiz.json --format json
+```
+
+Produces structured JSON with validation results, errors, and summary statistics.
+
+#### HTML Output
+
+```bash
+quiz-validator validate quiz.json --format html --output report.html
+```
+
+Generates an interactive HTML report with Chart.js visualization of scores.
+
+#### Markdown Output
+
+```bash
+quiz-validator validate quiz.json --format markdown --output report.md
+```
+
+Generates a readable markdown report with detailed error information.
+
+---
+
 ## 🧪 Testing
 
 This package is thoroughly tested with 33 unit tests covering:
