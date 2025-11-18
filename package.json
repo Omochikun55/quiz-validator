@@ -1,0 +1,47 @@
+{
+  "name": "@omochikun/quiz-validator",
+  "version": "1.0.0",
+  "description": "Validation library for quiz and question data with customizable rules and detailed error reporting",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "quiz",
+    "question",
+    "validation",
+    "validator",
+    "test",
+    "exam",
+    "assessment",
+    "education"
+  ],
+  "author": "Omochikun55",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Omochikun55/quiz-validator.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
