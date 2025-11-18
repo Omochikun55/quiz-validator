@@ -33,4 +33,4 @@ program
   .option('-o, --output <file>', 'Output JSON file')
   .action(convertCommand);
 
-program.parse();
+program.parse(process.argv);
